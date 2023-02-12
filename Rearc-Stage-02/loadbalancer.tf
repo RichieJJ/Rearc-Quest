@@ -11,7 +11,7 @@ resource "aws_alb_target_group" "rearc-target-group" {
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.rearc-vpc.id
-  target_type = "instance"
+  target_type = "ip"
 
   health_check {
     path                = "/"
