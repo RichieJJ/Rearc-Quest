@@ -55,3 +55,14 @@ resource "aws_codebuild_webhook" "rearc-codebuild-webhook" {
     }
   }
 }
+
+
+
+
+## The AWS account that Terraform uses to create this resource 
+## must have authorized CodeBuild to access Bitbucket/GitHub's OAuth 
+## API in each applicable region. This is a manual step that must be 
+## done before creating webhooks with this resource. If OAuth is not 
+## configured, AWS will return an error similar to ResourceNotFoundException: 
+## Could not find access token for server type github. More information can 
+## be found in the CodeBuild User Guide for Bitbucket and GitHub.
