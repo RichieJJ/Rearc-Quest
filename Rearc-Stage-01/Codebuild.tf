@@ -20,7 +20,7 @@ resource "aws_codebuild_project" "rearc-codebuild-project" {
     image_pull_credentials_type = "CODEBUILD"
 
     environment_variable {
-      name  = "REARC_QUEST_ECR_URL"
+      name  = "REARC_ECR_URL"
       value = aws_ecr_repository.rearc-container-repo.repository_url
     }
     privileged_mode = true
