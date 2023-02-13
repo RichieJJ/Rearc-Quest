@@ -70,8 +70,13 @@ There's definitely room for the improvement of my deplyment. I'll definitely fin
 
 
 REFERENCES:
+
 DEREK WOLPERT:https://github.com/derekwolpert 2019
+
 Terraform Docs
+
 AWS Docs
+
 Starck Overflow
+
 https://github.com/rearc/quest
