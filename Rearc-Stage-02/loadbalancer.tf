@@ -25,7 +25,7 @@ resource "aws_alb_target_group" "rearc-target-group" {
   depends_on = [aws_alb.rearc-alb]
 }
 
-resource "aws_acm_certificate" "rearc-ssl-cert" {
+resource "aws_acm_certificate" "myrichmondlaw.com" {                         # "rearc-ssl-cert" {
   domain_name       = "myrichmondlaw.com"
   validation_method = "DNS"
 
@@ -34,12 +34,6 @@ resource "aws_acm_certificate" "rearc-ssl-cert" {
     validation_domain = "myrichmondlaw.com"
   }
 }
-
-# resource "aws_iam_server_certificate" "rearc-ssl-cert" {
-#   name = "rearc-ssl-cert"
-#   certificate_body = file("self_signed_ssl_cert/public.pem")
-#   private_key = file("self_signed_ssl_cert/private.pem")
-# }
 
 resource "aws_alb_listener" "rearc-http-listener" {
   load_balancer_arn = aws_alb.rearc-alb.arn
@@ -56,7 +50,7 @@ resource "aws_alb_listener" "rearc-http-listener" {
     }
 
     target_group_arn = aws_alb_target_group.rearc-target-group.arn
-    type             = "forward"
+#    type             = "forward"
   }
 }
 
