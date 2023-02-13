@@ -3,6 +3,11 @@
 
 <img width="1433" alt="Screenshot 2023-02-07 at 2 56 42 AM" src="https://user-images.githubusercontent.com/112990571/218449523-a941c413-2e92-4070-8cdb-41d08750f341.png">
 
+<img width="1410" alt="Screenshot 2023-02-13 at 6 57 02 AM" src="https://user-images.githubusercontent.com/112990571/218454280-c5fa1c6b-26cf-4cd0-83ab-cafb41df5aaa.png">
+
+<img width="1410" alt="Screenshot 2023-02-13 at 6 57 19 AM" src="https://user-images.githubusercontent.com/112990571/218454330-6479a410-6283-45b2-ad06-d512e1098e9d.png">
+
+
 
 ## PREREQUISITES ###
 Amazon ECS — a fully managed container orchestration service
