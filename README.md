@@ -1,8 +1,8 @@
 <img width="1410" alt="Screenshot 2023-02-13 at 6 39 33 AM" src="https://user-images.githubusercontent.com/112990571/218449074-dc071de6-cb5b-4c33-a81c-3c9b32c7389f.png">
 
 
+<img width="1433" alt="Screenshot 2023-02-07 at 2 56 42 AM" src="https://user-images.githubusercontent.com/112990571/218449523-a941c413-2e92-4070-8cdb-41d08750f341.png">
 
-I referenced the worked done by DEREK WOLPERT
 
 ## PREREQUISITES ###
 Amazon ECS — a fully managed container orchestration service
@@ -56,7 +56,18 @@ terraform apply (optionally: -auto-approve)
 If your configurations are right, AWS ECS will automatically do the build.
 View the application using the "rearc-alb-dns-https-url" which is found in the output.tf file.
 
+I had the option to have built a CICD pipeline to deploy this application, but a few considerations informed my choice of AWS ECS. 
+a) COST: Building a CICD pipeline would cost more than leveraging AWS ECS because I would've needed at least 3 VMs ie if I didn't incorporate monitoring using grafana and prometheus.
+b) TIME: It would demand more time to get the project delivered. Time was already a major constraint to me.
+c) AUTOMAQTION: I configured a trigger in ECS to build as soon as a pull request is accepted and merged with main branch. So, ECS is able to do exactly which GitHub does.
+
+There's definitely room for the improvement of my deplyment. I'll definitely find time to work on it again.
 
 
 
-
+REFERENCES:
+DEREK WOLPERT:https://github.com/derekwolpert 2019
+Terraform Docs
+AWS Docs
+Starck Overflow
+https://github.com/rearc/quest
