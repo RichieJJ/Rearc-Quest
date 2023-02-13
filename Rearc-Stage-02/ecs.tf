@@ -63,7 +63,7 @@ resource "aws_ecs_service" "rearc-ecs-service" {
   }
 }
 
-resource "aws_appautoscaling_target" "rearc-autoscalling" {
+resource "aws_appautoscaling_target" "rearc-autoscaling" {
   service_namespace  = "ecs"
   resource_id        = "service/${aws_ecs_cluster.rearc-ecs-cluster.name}/${aws_ecs_service.rearc-ecs-service.name}"
   scalable_dimension = "ecs:service:DesiredCount"
