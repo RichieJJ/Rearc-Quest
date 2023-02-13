@@ -40,35 +40,35 @@ resource "aws_alb_listener" "rearc-http-listener" {
   port              = "80"
   protocol          = "HTTP"
 
-  default_action {
-    type = "redirect"
+#   default_action {
+#     type = "redirect"
 
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
+#     redirect {
+#       port        = "443"
+#       protocol    = "HTTPS"
+#       status_code = "HTTP_301"
+#     }
 
     target_group_arn = aws_alb_target_group.rearc-target-group.arn
-#    type             = "forward"
+    type             = "forward"
   }
 }
 
 # # this creates an access point to the load balancer using HTTPS protocol.
 
-# resource "aws_alb_listener" "rearc-https-listener" {
-#   load_balancer_arn = aws_alb.rearc-alb.arn
-#   port = "443"
-#   protocol = "HTTPS"
-#   ssl_policy = "ELBSecurityPolicy-2016-08"
+resource "aws_alb_listener" "rearc-https-listener" {
+  load_balancer_arn = aws_alb.rearc-alb.arn
+  port = "443"
+  protocol = "HTTPS"
+  ssl_policy = "ELBSecurityPolicy-2016-08"
 
-#   cerificate_arn = aws_acm_certificate.cert.myrichmondlaw.arn
+  cerificate_arn = aws_acm_certificate.myrichmondlaw.arn
 
 
-#   default_action {
-#     target_group_arn = aws_alb_target_group.rearc-target-group.arn
-#     type = "forward"
-#   }
-# }
+  default_action {
+    target_group_arn = aws_alb_target_group.rearc-target-group.arn
+    type = "forward"
+  }
+}
 
 
